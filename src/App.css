@@ -1,0 +1,153 @@
+:root {
+  --barra: #01dec4;
+  --fondo: #dbfdf9; }
+
+
+body {
+  padding: 0;
+  margin: 0;
+  border: none;
+  background-color: #89c2bc; }
+
+.box-in, .box-out {
+  padding: 0;
+  margin: 1rem auto;
+  box-shadow: 1px 1px 13px 2px rgb(74, 72, 72);
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+}
+
+.box-in {
+  max-width: 550px;
+ }
+ .box-out {
+  max-width: 700px;
+ }
+
+.preview {
+  background-color: #fff; 
+}
+
+.fa-solid {
+  margin-right: 10px; }
+  .fa-solid:hover {
+    color: #17ffc9; }
+
+#title {
+  margin: 0; }
+
+.barra {
+  box-shadow: 0 0 15px 1px  rgb(74, 72, 72);
+  padding: 5px 10px;
+  background-color: var(--barra);
+  border: 1px solid rgb(69, 69, 69);
+  width: 100%; }
+  
+#editor, .preview {
+  padding-left: 10px;
+  padding-top: 8px;
+  padding-right: 10px;
+  border-left: 1px solid rgb(69, 69, 69);
+  border-right: 1px solid rgb(69, 69, 69);
+  border-bottom: 1px solid rgb(69, 69, 69);
+  outline: none;
+  animation-duration: 2s;
+  animation-fill-mode: forwards; }
+
+#editor, .preview {
+  background-color: var(--fondo);
+  width: 100%;
+  min-height: 200px;
+ }
+
+.box-out.cerrar{
+  animation-name: cerrar2;
+  width: 700px;
+  height: 1200px;
+  overflow: hidden;
+}
+img {
+  width: 90%;
+  height: auto;
+}
+h1{
+  font-size: 2.1em;
+  border-bottom: 2px solid black;
+  margin: 5px 0px;
+}
+h2{
+  font-size: 1.7em;
+  border-bottom: 1px solid black;
+  margin: 5px 0px; 
+}
+h3{
+  font-size: 1.3em;
+}
+.box-in.cerrar{
+  animation-name: cerrar1;
+  overflow: hidden;
+  height: 242px;
+}
+.box-out.abrir{
+  animation-name: abrir2;
+  overflow: hidden;
+  height: 0px;
+  width: 0px;
+}
+.box-in.abrir{
+  animation-name: abrir1;
+  overflow: hidden;
+  height: 0px;
+}
+.box-in.maximizar #editor{
+  animation-name: max1;
+  height: 242px;
+}
+.box-in.minimizar #editor{
+  animation-name: min1;
+  height: 1200px;
+}
+@keyframes min1 {
+  80%,100%{
+    height: 242px;
+  }
+}
+@keyframes max1 {
+  80%,100%{
+    height: 1200px;
+  }
+}
+@keyframes cerrar1 {
+  80%,100%{
+    height: 0;
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+}
+@keyframes cerrar2 {
+ 
+  80%,100%{
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  
+}
+pre{
+  background-color: white;
+}
+@keyframes abrir2 {
+ 
+  80%,100%{
+    width: 700px;
+    height: 1200px;
+    opacity: 1;
+  }
+  
+}
+@keyframes abrir1 {
+  80%,100%{
+    height: 242px;
+    opacity: 1;
+  }
+}
